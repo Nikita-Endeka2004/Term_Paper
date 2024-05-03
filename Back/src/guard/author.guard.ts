@@ -16,7 +16,7 @@ export class AuthorGuard implements CanActivate {
       case 'transaction':
         entity = await this.transactionService.findOne(id)
         break
-      case 'caregory':
+      case 'category':
         entity = await this.categoryService.findOne(id)
         break
       default:
