@@ -27,8 +27,11 @@ export class TransactionService {
       where: {
         user: {id}
       },
+      relations: {
+        category: true
+      },
       order: {
-        crearedAt: 'DESC'
+        createdAt: 'DESC'
       }
     })
     return transactions
@@ -81,7 +84,7 @@ export class TransactionService {
         user: true
       },
       order: {
-        crearedAt: 'DESC'
+        createdAt: 'DESC'
       },
       take: limit,
       skip: (page - 1) * limit
