@@ -18,7 +18,7 @@ npm install
 ```
 To start project
 ```bush
-npm run start
+npm run dev
 ```
 
 ## Expanding the ESLint configuration

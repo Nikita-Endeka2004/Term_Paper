@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../pages/Layout";
 import ErrorPage from "../pages/ErrorPage";
-import Home from "../pages/Home";
+import Home, { HomeLoader } from "../pages/Home";
 import Transactions, { transactionAction, transactionLoader } from "../pages/Transactions";
 import Categories, { categoriesAction, categoryLoader } from "../pages/Categories";
 import Auth from "../pages/Auth";
@@ -15,7 +15,8 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        loader: HomeLoader,
+        element: <ProtectedRoute><Home /></ProtectedRoute>,
       },
       {
         path: 'transactions',
